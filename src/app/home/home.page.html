@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Cuaca Hari Ini
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let cityName of cityList">
+        <ion-card-header>
+            <ion-card-title>{{ cityName }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-icon [name]="getWeatherIcon(weatherData[cityName]?.weather[0]?.icon)"></ion-icon>
+            <h2>{{ weatherData[cityName]?.weather[0]?.description }}</h2>
+            <h3>{{ weatherData[cityName]?.main?.temp }}°C</h3>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
